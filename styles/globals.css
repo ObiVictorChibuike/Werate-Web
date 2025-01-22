@@ -2,20 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  background: radial-gradient(
+      circle at left,
+      #6e1fed 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    radial-gradient(circle at right, #2d0074 0%, rgba(255, 255, 255, 0) 100%),
+    radial-gradient(circle at bottom, #d884ff 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media screen and (min-width: 540px) {
+  .container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+@media screen and (min-width: 540px) {
+  .container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+@media screen and (min-width: 992px) {
+  .container {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
