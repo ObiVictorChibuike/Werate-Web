@@ -1,15 +1,15 @@
 // import Banner from "../components/Banner";
 
 import Banner from "./Banner";
-import HeighLights from "./overview/HeighLights";
+import OverView from "./overview/OverView";
 import RestuarantDetails from "./RestuarantDetails";
 
 const Home = () => {
   return (
-    <div>
+    <div className="pb-20">
       <Banner />
       <RestuarantDetails />
-      <HeighLights />
+      <OverView />
     </div>
   );
 };
