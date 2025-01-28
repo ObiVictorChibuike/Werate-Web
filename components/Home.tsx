@@ -1,7 +1,7 @@
 // import Banner from "../components/Banner";
 
 import Banner from "./Banner";
-import OverView from "./overview/OverView";
+// import OverView from "./overview/OverView";
 import RestuarantDetails from "./RestuarantDetails";
 
 const Home = () => {
@@ -9,7 +9,6 @@ const Home = () => {
     <div className="pb-20">
       <Banner />
       <RestuarantDetails />
-      <OverView />
     </div>
   );
 };

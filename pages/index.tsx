@@ -1,5 +1,4 @@
 import Home from "@/components/Home";
-import Image from "next/image";
 // import { Figtree } from "next/font/google";
 
 // const figtree = Figtree({

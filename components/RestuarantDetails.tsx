@@ -1,6 +1,13 @@
 import Image from "next/image";
 import star from "@/public/images/star.svg";
+import { useEffect, useState } from "react";
+import OverView from "./overview/OverView";
 const RestuarantDetails = () => {
+  const [activeSection, setActiveSection] = useState("overview");
+
+  useEffect(() => {
+    setActiveSection("overView");
+  }, []);
   return (
     <div className=" mt-10 mb-8">
       <div className="container px-[15px] ">
@@ -15,20 +22,48 @@ const RestuarantDetails = () => {
           </div>
         </div>
         <div className="flex justify-center items-center gap-x-4 lg:gap-x-4 mt-8  text-[16px] leading-[19.2px] tracking-[-0.41px] font-[600] ">
-          <button className="bg-[#FF7BAC] py-2 px-4 rounded-[8px] border border-[#FFFFFF33] text-[#FFFFFF]">
+          <button
+            onClick={() => setActiveSection("overView")}
+            className={`${
+              activeSection === "overView" ? "bg-[#FF7BAC] " : "bg-[#FFFFFF1A]"
+            } py-2 px-4 rounded-[8px] border border-[#FFFFFF33] text-[#FFFFFF] transition-all duration-500 ease-in-out`}
+          >
             Overview
           </button>
-          <button className="bg-[#FFFFFF1A] py-2 px-4 rounded-[8px] border border-[#FFFFFF33] text-[#FFFFFF80]">
+          <button
+            onClick={() => setActiveSection("menu")}
+            className={`${
+              activeSection === "menu" ? "bg-[#FF7BAC]" : "bg-[#FFFFFF1A]"
+            }  py-2 px-4 rounded-[8px] border border-[#FFFFFF33] text-[#FFFFFF80] transition-all duration-500 ease-in-out`}
+          >
             Menu
           </button>
-          <button className="bg-[#FFFFFF1A] py-2 px-4 rounded-[8px] border border-[#FFFFFF33] text-[#FFFFFF80]">
+          <button
+            onClick={() => setActiveSection("gallery")}
+            className={`${
+              activeSection === "gallery" ? "bg-[#FF7BAC]" : "bg-[#FFFFFF1A]"
+            }  py-2 px-4 rounded-[8px] border border-[#FFFFFF33] text-[#FFFFFF80] transition-all duration-500 ease-in-out`}
+          >
             Gallery
           </button>
-          <button className="bg-[#FFFFFF1A]  py-2 px-4 rounded-[8px] border border-[#FFFFFF33] text-[#FFFFFF80]">
+          <button
+            onClick={() => setActiveSection("reviews")}
+            className={`${
+              activeSection === "reviews" ? "bg-[#FF7BAC]" : "bg-[#FFFFFF1A]"
+            }  py-2 px-4 rounded-[8px] border border-[#FFFFFF33] text-[#FFFFFF80] transition-all duration-500 ease-in-out`}
+          >
             Reviews
           </button>
         </div>
       </div>
+      {/*  */}
+      <div className="mt-10">
+        <div>{activeSection === "overView" && <OverView />}</div>
+        <div>{activeSection === "menu" && <h1>hello menu</h1>}</div>
+        <div>{activeSection === "gallery" && <h1>hello gallery</h1>}</div>
+        <div>{activeSection === "reviews" && <h1>hello reviews</h1>}</div>
+      </div>
+      {/*  */}
     </div>
   );
 };
