@@ -2,6 +2,7 @@ import Image from "next/image";
 import star from "@/public/images/star.svg";
 import { useEffect, useState } from "react";
 import OverView from "./overview/OverView";
+import Gallery from "./gallery/Gallery";
 const RestuarantDetails = () => {
   const [activeSection, setActiveSection] = useState("overview");
 
@@ -60,7 +61,7 @@ const RestuarantDetails = () => {
       <div className="mt-10">
         <div>{activeSection === "overView" && <OverView />}</div>
         <div>{activeSection === "menu" && <h1>hello menu</h1>}</div>
-        <div>{activeSection === "gallery" && <h1>hello gallery</h1>}</div>
+        <div>{activeSection === "gallery" && <Gallery />}</div>
         <div>{activeSection === "reviews" && <h1>hello reviews</h1>}</div>
       </div>
       {/*  */}
