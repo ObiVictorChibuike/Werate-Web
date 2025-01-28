@@ -1,14 +1,19 @@
 import Image from "next/image";
 import star from "@/public/images/star.svg";
-import { useEffect, useState } from "react";
+//comps
 import OverView from "./overview/OverView";
 import Gallery from "./gallery/Gallery";
+import Reviews from "./overview/Reviews";
+//react hooks
+import { useEffect, useState } from "react";
+
 const RestuarantDetails = () => {
   const [activeSection, setActiveSection] = useState("overview");
 
   useEffect(() => {
     setActiveSection("overView");
   }, []);
+
   return (
     <div className=" mt-10 mb-8">
       <div className="container px-[15px] ">
@@ -22,6 +27,7 @@ const RestuarantDetails = () => {
             <span className="text-sm">4.4 / 5</span>
           </div>
         </div>
+
         <div className="flex justify-center items-center gap-x-4 lg:gap-x-4 mt-8  text-[16px] leading-[19.2px] tracking-[-0.41px] font-[600] ">
           <button
             onClick={() => setActiveSection("overView")}
@@ -57,12 +63,12 @@ const RestuarantDetails = () => {
           </button>
         </div>
       </div>
-      {/*  */}
+      {/* navigating */}
       <div className="mt-10">
         <div>{activeSection === "overView" && <OverView />}</div>
         <div>{activeSection === "menu" && <h1>hello menu</h1>}</div>
         <div>{activeSection === "gallery" && <Gallery />}</div>
-        <div>{activeSection === "reviews" && <h1>hello reviews</h1>}</div>
+        <div>{activeSection === "reviews" && <Reviews />}</div>
       </div>
       {/*  */}
     </div>
